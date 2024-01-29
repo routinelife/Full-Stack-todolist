@@ -32,3 +32,29 @@ export var postTask = function (content, successCB, errorCB) {
 
   $.ajax(request);
 };
+
+export var deleteTask = function(id) {
+  var request = {
+    type: 'DELETE',
+    url: 'api/tasks/'+id+'?api_key=1',
+    
+  }
+  $.ajax(request);
+}
+
+
+export var markTaskComplete = function (id) {
+  var request = {
+    type: 'PUT',
+      url: 'api/tasks/'+id+'/mark_complete?api_key=1',
+  };
+  $.ajax(request);
+}
+
+export var markTaskActive = function (id) {
+  var request = {
+    type: 'PUT',
+      url: 'api/tasks/'+id+'/mark_active?api_key=1',
+  };
+  $.ajax(request);
+}
